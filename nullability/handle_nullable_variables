@@ -1,1 +1,56 @@
+//print the number of characters in favouriteActor using the length property
+fun main() {
+    var favoriteActor: String = "Sandra Oh"
+    println(favoriteActor.length)
+}
 
+//shwoing there will be a compile error because there is a possibility that the variable is null
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+    println(favoriteActor.length)
+}
+
+//using safe-call operator ?. to avoid compile error
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+    println(favoriteActor?.length)
+}
+
+//!!. not-null assertion operator will ensure the variable is not null, if variable is assigned as null, NullPointerException occurs
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+    println(favoriteActor!!.length)
+}
+
+//!= comparison operator to check the nullable variable isn't null
+fun main() {
+    var favoriteActor: String? = null
+
+    if(favoriteActor != null) {
+      println("The number of characters in your favorite actor's name is ${favoriteActor.length}.")
+    } else {
+      println("You didn't input a name.")
+    }
+}
+
+//assign if-else expression to a non-nullable type
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+
+    val lengthOfName = if (favoriteActor != null) {
+      favoriteActor.length
+    } else {
+      0
+    }
+
+    println("The number of characters in your favorite actor's name is $lengthOfName.")
+}
+
+//?: Elvis operator. If the variable isn't null, the expression before :? Elvis operator executes. If variable is null, expression after ?: executes
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+
+    val lengthOfName = favoriteActor?.length ?: 0
+
+    println("The number of characters in your favorite actor's name is $lengthOfName.")
+}
