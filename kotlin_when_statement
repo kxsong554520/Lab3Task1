@@ -42,3 +42,15 @@ fun main() {
         else -> println("x isn't an integer number.")
     }
 }
+
+//add an additional condition with the same body
+fun main() {
+    val trafficLightColor = "Amber"
+
+    when (trafficLightColor) {
+        "Red" -> println("Stop")
+        "Yellow", "Amber" -> println("Slow")
+        "Green" -> println("Go")
+        else -> println("Invalid traffic-light color")
+    }
+}
