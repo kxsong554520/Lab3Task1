@@ -1,0 +1,25 @@
+//pass message as variable as an argument without when statement
+fun main() {
+    val trafficLightColor = "Black"
+
+    val message = 
+      if (trafficLightColor == "Red") "Stop"
+      else if (trafficLightColor == "Yellow") "Slow"
+      else if (trafficLightColor == "Green") "Go"
+      else "Invalid traffic-light color"
+
+    println(message)
+}
+
+//pass message as variable as an argument with when statement
+fun main() {
+    val trafficLightColor = "Amber"
+
+    val message = when(trafficLightColor) {
+        "Red" -> "Stop"
+        "Yellow", "Amber" -> "Slow"
+        "Green" -> "Go"
+        else -> "Invalid traffic-light color"
+    }
+    println(message)
+}
