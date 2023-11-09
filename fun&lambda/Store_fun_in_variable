@@ -1,0 +1,28 @@
+//it will show Function invocation 'trick()' expected
+fun main() {
+    val trickFunction = trick
+}
+
+fun trick() {
+    println("No treats!")
+}
+
+//no errors but warning will show that trickFunction is never used
+fun main() {
+    val trickFunction = ::trick
+}
+
+fun trick() {
+    println("No treats!")
+}
+
+//end result will print "no treats!" twice as the function is called twice
+fun main() {
+    val trickFunction = trick
+    trick()
+    trickFunction()
+}
+
+val trick = {
+    println("No treats!")
+}
