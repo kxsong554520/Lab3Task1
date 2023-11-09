@@ -1,0 +1,87 @@
+//omit parameter name
+fun main() {
+    val coins: (Int) -> String = { 
+        "$it quarters"
+        //$it is recognised as shorthand of Int
+    }
+    
+    val treatFunction = trickOrTreat(false, coins)
+    val trickFunction = trickOrTreat(true, null)
+    treatFunction()
+    trickFunction()
+}
+
+fun trickOrTreat(isTrick: Boolean, extraTreat: ((Int) -> String)?): () -> Unit {
+    if (isTrick) {
+        return trick
+    } else {
+        if (extraTreat!=null){
+        	println(extraTreat(5))
+        }
+        return treat
+    }
+}
+
+val trick = {
+    println("No treats!")
+}
+
+val treat:() -> Unit = {
+    println("Have a treat!")
+}
+
+//pass lambda expression into function
+fun main() {
+    // coins variable is not used, the lambda expression is passed into the trickOrTreat function directly
+    val treatFunction = trickOrTreat(false, {"$it quarters"})
+    val trickFunction = trickOrTreat(true, null)
+    treatFunction()
+    trickFunction()
+}
+
+fun trickOrTreat(isTrick: Boolean, extraTreat: ((Int) -> String)?): () -> Unit {
+    if (isTrick) {
+        return trick
+    } else {
+        if (extraTreat!=null){
+        	println(extraTreat(5))
+        }
+        return treat
+    }
+}
+
+val trick = {
+    println("No treats!")
+}
+
+val treat:() -> Unit = {
+    println("Have a treat!")
+}
+
+//trailing lambda syntax
+fun main() {
+    val treatFunction = trickOrTreat(false) {"$it quarters"}
+    val trickFunction = trickOrTreat(true, null)
+    treatFunction()
+    trickFunction()
+}
+
+fun trickOrTreat(isTrick: Boolean, extraTreat: ((Int) -> String)?): () -> Unit {
+    if (isTrick) {
+        return trick
+    } else {
+        if (extraTreat!=null){
+        	println(extraTreat(5))
+        }
+        return treat
+    }
+}
+
+val trick = {
+    println("No treats!")
+}
+
+val treat:() -> Unit = {
+    println("Have a treat!")
+}
+
