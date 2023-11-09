@@ -1,0 +1,23 @@
+//show null cannot be a value of a non-null type String
+fun main() {
+    var favoriteActor: String = "Sandra Oh"
+    favoriteActor = null
+}
+
+//print favouriteActor String then reassigns it to null by using ? operator
+fun main() {
+    var favoriteActor: String? = "Sandra Oh"
+    println(favoriteActor)
+
+    favoriteActor = null
+    println(favoriteActor)
+}
+
+//assign value 10 to the int and reassign null to it
+fun main() {
+    var number: Int? = 10
+    println(number)
+    
+    number = null
+    println(number)
+}
