@@ -1,3 +1,28 @@
+// if else with one condition
+fun main() {
+    val trafficLightColor = "Red"
+
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else {
+        println("Go")
+    }
+}
+
+//add an else-if branch
+fun main() {
+    val trafficLightColor = "Green"
+
+    if (trafficLightColor == "Red") {
+        println("Stop")
+    } else if (trafficLightColor == "Yellow") {
+        println("Slow")
+    } else {
+        println("Go")
+    }
+}
+
+//add another else-if branch and edit the else statemnt to catch invalid input
 fun main() {
     val trafficLightColor = "Black"
 
