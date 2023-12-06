@@ -13,6 +13,13 @@ val trick = {
 val treat:() -> Unit = {
     println("Have a treat!")
 }
+//the output will be 
+//5 quarters
+//Have a treat!
+//No treats
+//The extraTreat() function is only called when the isTrick parameter is set to a false argument, so the output includes 5 quarters, but no cupcakes.
+
+5 quarters
 
 //function with return type
 fun main() {
